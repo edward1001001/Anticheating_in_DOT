@@ -10,11 +10,11 @@
 * ``config.py`` holds the configuration of the DOT, i.e., the number of students ``n``, the size of the question pool ``m``, the number of questions in one test ``q``, the number of instances ``num_instances``.
 ## Others
 * ``instance_helper.py`` can generate DOT instances ( ``n``,``m``,``q``, uniformly distributed competences ``y``, and Dirichlet distributed colluding matrix ``P``), and convert ``.instance`` (python version) to ``.mat`` (MATLAB version);
-* ``report.py`` report the statistics of the optimization results of different algorithms;
+* ``report.py`` report the statistics of the optimization results of different algorithms with a box graph;
 * ``scoring_helper.py`` computes the scores with collusion for each instance.
 
 # Usage
-## generate new instances
+## 1. Generate New Instances
 * (1) Change the configurations in the ``config.py`` file accordingly;
 * (2) Uncomment lines 33 and 34 in ``dot.py``,
 ```
@@ -24,3 +24,20 @@ instance_helper.convert_instances_pickle_to_mat(loc=config.loc, num_instances=co
 and comment all other lines in the main() function;
 * (3) Run ``dot.py`` with Python.
 Generated instances (both ``.instance`` and ``.mat`` files) will be saved under the folder ``{n}_{m}_{q}_instances``.
+
+## 2. Comparing Optimization Results of Different Algorithms
+* (1) Decide algorithms to use by commenting unwanted algorithms, e.g., if we do not want to include the ILP due to its long runtime, we can comment line 51,
+```
+# opt_ilp.run_ilp(instances, loc=config.loc) # ILP
+```
+* (2) Choose the results to be report by modifying line 54
+```
+report.report(loc=config.loc, algs=['random', 'MMM', 'CGS', 'MMMCGS', 'ilp'])
+```
+. We can delete the name of algorithm from the ``algs`` list to mute the report of its result.
+* (3) Run ``dot.py`` with Python.
+The output box plot will be saved under the folder sepecified in the ``config.py`` with ``figsavepth``.
+
+### Notes:
+* As mentioned, the ``alg_cyclic.py`` only reads the CGS results obtained with the ``alg_CGS.m`` (saved under the instances folder, with the name ``N{n}_Mp{m}_M{q}_alg2.mat``). Hence, if we want to include the CGS results in Sec 2, we need to run the ``alg_CGS.m`` with MATLAB prior running ``dot.py`` with Python;
+* ``MMM-CGS`` relies on the result of ``CGS``, hence, we need to include ``CGS`` first if we want to include ``MMM-CGS``; 
