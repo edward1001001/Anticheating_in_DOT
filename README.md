@@ -9,7 +9,7 @@ The codes are developed in two platforms.
 The Grouping-based Anti-collusion Scheme (GAS) and Cyclic Greedy Searching (CGS) algorithms are developed in MATLAB R2018a. 
 
 The Min-Max Greedy Matching (MMM) and Integer Linear Programming (ILP) algorithms are developed in Python v3.6, and the dependent packages include:
-* networkx v2.1
+* networkx v2.5
 * numpy v1.14.3
 * scipy v1.1.0
 * pulp v1.6.8
