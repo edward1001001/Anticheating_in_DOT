@@ -12,5 +12,8 @@ The Min-Max Greedy Matching (MMM) and Integer Linear Programming (ILP) algorithm
 * networkx v2.5
 * numpy v1.14.3
 * scipy v1.1.0
-* pulp v1.6.8
+* pulp v2.3.1
 * matplotlib v2.2.2
+* gurobi v9.0.3
+
+Note: the ``gurobi`` package is only needed by ILP. The academic licence can be easily obtained through [their website](https://www.gurobi.com/free-trial/) if you are eligible. Or you can simply comment the ILP related codes, and rely on the CGS or MMM-CGS which will also generate comparable results at a much faster speed. 
