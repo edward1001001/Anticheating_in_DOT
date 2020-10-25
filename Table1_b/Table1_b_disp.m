@@ -1,4 +1,4 @@
-% load('Rng100_trancatedY_Ncase500_20200504_01_08_32')
+
 N = 85;
 load('Rng100_trancatedY_Ncase500_20201024_19_55_40.mat')
 ResultMat = [Results.F0/N;
