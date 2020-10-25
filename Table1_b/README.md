@@ -12,7 +12,7 @@ None & 0.16278 (0.01499) & 0.30384 (0.04153) & 0.60838 (0.06344)
  GAS & 0.00027 (0.00015) & 0.00963 (0.00137) & 0.02713 (0.00304)
 Opti & 0.00007 (0.00002) & 0.00861 (0.00154) & 0.04571 (0.01802)
 ```
-Line 2 can be changed to output the different files of statist results,
+Line 3 can be changed to output the different files of statist results,
 ```
 load('Rng100_trancatedY_Ncase500_20201024_19_55_40.mat')
 ```
