@@ -4,7 +4,7 @@ Running the code ``performanceDatSim.m`` with ``MATLAB`` will generate 500 optim
 
 The students' competences ``Y`` were randomly generated according to a Gaussian distribution (mu = 0.625, sigma = 0.125) on the support [0.25, 1]. The colluding matrix ``P`` is heuristically constructed (refer the Method section of the paper for details).
 
-In the code ``performanceDatSim.m``, a constant seed 100 (line 4) was used to fix the results. Modifications made to the code can potentially change the final result. Besides the optimized results for each instance, the statistic results (``Rng100_trancatedY_NcaseXXX_timestamp``) of the total 500 instances are stored under the same folder with ``performanceDatSim.m``.
+In the code ``performanceDatSim.m``, a constant seed 100 (line 4) was used to fix the results. Modifications made to the code can potentially change the final result. Besides the optimized results for each instance, the statistic results (``Rng100_trancatedY_NcaseXXX_timestamp``) of the total 500 instances are also saved, under the same folder with ``performanceDatSim.m``.
 
 By running the ``Table1_b.m`` with ``MATLAB``, the statistic results will be stored in ``Table1_b.txt``, e.g.,
 ```
