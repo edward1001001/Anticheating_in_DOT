@@ -34,7 +34,7 @@ Generated instances (both ``.instance`` and ``.mat`` files) will be saved under 
 ```
 report.report(loc=config.loc, algs=['random', 'MMM', 'CGS', 'MMMCGS', 'ilp'])
 ```
-. We can delete the name of algorithm from the ``algs`` list to mute the report of its result.
+. We can delete the name of the algorithm from the ``algs`` list to mute the report of its result.
 * (3) Run ``dot.py`` with Python.
 The output box plot will be saved under the folder sepecified in the ``config.py`` with ``figsavepth``.
 
