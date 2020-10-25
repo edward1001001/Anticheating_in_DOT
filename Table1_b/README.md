@@ -2,7 +2,7 @@
 
 Running the code ``performanceDatSim.m`` with ``MATLAB`` will generate 500 optimized DOT instances which will be stored in the ``SimResults`` folder. Each instance will contain two structure ``setting`` storing the setting information (the number of students ``N``, the competence ``Y``, the size of question pool ``Mp``, and the number of questions in one test ``M``), and ``Results`` storing the optimized results in terms of ``g``, ``gW`` and ``gMI`` metrics information (under different level of anti-collusion: None, GAS and Opti).
 
-The students' competences ``Y`` were randomly generated according to a Gaussian distribution (mu = 0.625, sigma = 0.125) on the support [0.25, 1] The colluding matrix ``P`` is heuristically constructed (refer the Method section of the paper for details).
+The students' competences ``Y`` were randomly generated according to a Gaussian distribution (mu = 0.625, sigma = 0.125) on the support [0.25, 1]. The colluding matrix ``P`` is heuristically constructed (refer the Method section of the paper for details).
 
 In the code ``performanceDatSim.m``, a constant seed 100 (line 4) was used to fix the results. Modifications made to the code can potentially change the final result. Besides the optimized results for each instance, the statistic results (``Rng100_trancatedY_NcaseXXX_timestamp``) of the total 500 instances are stored under the same folder with ``performanceDatSim.m``.
 
