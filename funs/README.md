@@ -1,7 +1,7 @@
 # breif explanations of functions:
-* PoolGenbycircshift
+* ## PoolGenbycircshift
 Generate the cyclic pool for sequences of problem sets, with the dimension of Mp by M, and often denoted as PSetsPool;
-* TBinGen
+* ## TBinGen
 Calculate the inherent gain matrix which is an element-wise product of the colluding matrix P and the competence difference matrix D, whose values depend only on the competences of the students;
 * TBposFullCal
 Calculate the positional matrix of the pool;
