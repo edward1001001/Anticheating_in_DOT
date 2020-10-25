@@ -41,3 +41,10 @@ The output box plot will be saved under the folder sepecified in the ``config.py
 ### Notes:
 * As mentioned, the ``alg_cyclic.py`` only reads the CGS results obtained with the ``alg_CGS.m`` (saved under the instances folder, with the name ``N{n}_Mp{m}_M{q}_alg2.mat``). Hence, if we want to include the CGS results in Sec 2, we need to run the ``alg_CGS.m`` with MATLAB prior running ``dot.py`` with Python;
 * ``MMM-CGS`` relies on the result of ``CGS``, hence, we need to include ``CGS`` first if we want to include ``MMM-CGS``; 
+
+### Example Reports
+![](report_5_3_2.png)
+![](report_5_3_3.png)
+![](report_10_3_2.png)
+![](report_10_5_3.png)
+![](report_10_5_5.png)
