@@ -21,7 +21,11 @@ Run the ``Table1_a.m`` with ``MATLAB``, the statistic results of 500 instances i
 *Opti & 0.00044 (0.00005) & 0.00908 (0.00000) & 0.06878 (0.00000)
 
 In the code ``Table1_a.m``, a constant seed (line 4) was used to fix the results. If any modifications made to the code, please comment line 83 
-```'NoiseMat = normrnd(0,0.05,[Ncases,length(Yo)]);'```
+```
+NoiseMat = normrnd(0,0.05,[Ncases,length(Yo)]);
+```
 and uncomment line 36 
-```'% load('NoiseMat.mat','NoiseMat')'```
+```
+% load('NoiseMat.mat','NoiseMat')
+```
 to keep the applied noises unchanged.
