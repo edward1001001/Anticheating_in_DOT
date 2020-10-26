@@ -34,7 +34,7 @@ or
 }
 ```
 ## Real Test Data
-Raw data of students' test will be available for data sharing upon request (wangg6 at rpi dot edu) and after going through an Institutional Review Board procedure at RPI. 
+Raw data of students' test will be available for data sharing upon request (wangg6 at rpi dot edu) and after going through an Institutional Review Board procedure at RPI, since this project is considered as human subjects research.
 
 ## Platform
 We are also working on the DOT Platform which integrates the proposed techniques. Please have a look at the [demo here](https://wang-axis.github.io/dot/).
