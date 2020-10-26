@@ -33,3 +33,12 @@ or
   publisher={Preprints}
 }
 ```
+## Real Test Data
+Raw data of students' test will be available for data sharing upon request (wangg6 at rpi dot edu) and after going through an Institutional Review Board procedure at RPI. 
+
+## Platform
+We are also working on the DOT Platform which integrates the proposed techniques. Please have a look at the [demo here](https://wang-axis.github.io/dot/).
+
+## Contact
+lim23 at rpi dot edu
+Any discussions, suggestions and questions are welcome!
