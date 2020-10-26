@@ -68,12 +68,19 @@ def generate_instances(n, m, q, num_instances, loc=config.loc):
     if not os.path.exists(dir):
         os.mkdir(dir)
     instances = list()
+    honest_score_all = np.zeros(num_instances)
     for i in range(num_instances):
         out_n, out_m, q, Y, P = generate_dot_instance(config.n, config.m, config.q, fnability=globals()['generate_abilities'], fncheating=globals()['generate_cheating_network'])
         instances.append((out_n, out_m, q, Y, P))
         fname = f'{loc}/{i}.instance'
         with open(fname, 'wb') as fo:
             pickle.dump((out_n, out_m, q, Y, P), fo)
+        
+        (n, m, q, y, P) = instances[i]
+        shonest = np.sum([q*y[k] for k in range(n)])
+        honest_score_all[i] = shonest
+    with open(f'{loc}/honest', 'wb') as fo:
+        pickle.dump(honest_score_all, fo)
     return instances
 
 
@@ -95,7 +102,13 @@ def convert_instances_pickle_to_mat(loc=config.loc, num_instances=0):
             r = pickle.load(f)
             instances.append(r)
     for i in range(num_instances):
-        I = instances[i]
+        I = np.zeros((5,),dtype=np.object)
+        t = instances[i]
+        I[0] = t[0]
+        I[1] = t[1]
+        I[2] = t[2]
+        I[3] = t[3]
+        I[4] = t[4]
         scipy.io.savemat(f'{loc}/{i}.mat', mdict={'instance': I})
 
 

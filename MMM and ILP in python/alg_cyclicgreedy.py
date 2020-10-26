@@ -7,7 +7,6 @@ import networkx as nx
 
 import config
 import scoring_helper
-import alg_cyclic
 import alg_greedy
 
 
@@ -20,13 +19,7 @@ def alg_cyclicgreedy(I, Acyc=None):
         Ainit: nxm assignment matrix
     """
     (n, m, q, y, P) = I
-    if Acyc is None:
-        Acyc, Acycinit = alg_cyclic.alg_cyclic(I)
-        scycinit, Scycinit = scoring_helper.compute_scores(I, Acycinit)
-        scycinit = np.sum(scycinit)
-        scyc, Scyc = scoring_helper.compute_scores(I, Acyc)
-        scyc = np.sum(scyc)
-        assert(scyc <= scycinit)
+    assert(Acyc is not None)
     Agreedy, Ainit = alg_greedy.alg_greedy(I, Ainitial=Acyc)
     assert(np.array_equal(Ainit, Acyc))
     sinit, Sinit = scoring_helper.compute_scores(I, Ainit)
@@ -65,15 +58,15 @@ def experiment_cyclicgreedy(instances, cycloc=None):
         greedy_assignments.append(Agreedy)
         greedy_scores.append(sgreedy)
         greedy_runtimes.append(end_time - start_time)
-        print(f'instance {i}, initial {sinit}, greedy {sgreedy}, {end_time-start_time}s')
+        print(f'instance {i}, initial {sinit}, MMM-CGS {sgreedy}, runtime {end_time-start_time}s')
     return initial_assignments, initial_scores, greedy_assignments, greedy_scores, greedy_runtimes
 
 
-def run_cyclicgreedy(instances, loc=config.loc, cycloc=None):
+def run_MMM_CGS(instances, loc=config.loc, cycloc=None):
     initial_assignments, initial_scores, greedy_assignments, greedy_scores, greedy_runtimes = experiment_cyclicgreedy(instances, cycloc=cycloc)
-    with open(f'{loc}/greedy_greedy_assignments', 'wb') as fo:
+    with open(f'{loc}/MMMCGS_assignments', 'wb') as fo:
         pickle.dump(greedy_assignments, fo)
-    with open(f'{loc}/greedy_greedy_scores', 'wb') as fo:
+    with open(f'{loc}/MMMCGS_scores', 'wb') as fo:
         pickle.dump(greedy_scores, fo)
-    with open(f'{loc}/greedy_greedy_runtimes', 'wb') as fo:
+    with open(f'{loc}/MMMCGS_runtimes', 'wb') as fo:
         pickle.dump(greedy_runtimes, fo)

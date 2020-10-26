@@ -101,20 +101,20 @@ def experiment_greedy(instances):
         greedy_assignments.append(Agreedy)
         greedy_scores.append(sgreedy)
         greedy_runtimes.append(end_time - start_time)
-        print(f'instance {i}, initial {sinit}, greedy {sgreedy}, {end_time-start_time}s')
+        print(f'instance {i}, initial {sinit}, MMM {sgreedy}, runtime {end_time-start_time}s')
     return initial_assignments, initial_scores, greedy_assignments, greedy_scores, greedy_runtimes
 
 
-def run_greedy(instances, loc=config.loc):
+def run_MMM(instances, loc=config.loc):
     initial_assignments, initial_scores, greedy_assignments, greedy_scores, greedy_runtimes = experiment_greedy(instances)
-    with open(f'{loc}/initial_greedy_assignments', 'wb') as fo:
+    with open(f'{loc}/initial_MMM_assignments', 'wb') as fo:
         pickle.dump(initial_assignments, fo)
-    with open(f'{loc}/initial_greedy_scores', 'wb') as fo:
+    with open(f'{loc}/initial_MMM_scores', 'wb') as fo:
         pickle.dump(initial_scores, fo)
-    with open(f'{loc}/greedy_assignments', 'wb') as fo:
+    with open(f'{loc}/MMM_assignments', 'wb') as fo:
         pickle.dump(greedy_assignments, fo)
-    with open(f'{loc}/greedy_scores', 'wb') as fo:
+    with open(f'{loc}/MMM_scores', 'wb') as fo:
         pickle.dump(greedy_scores, fo)
-    with open(f'{loc}/greedy_runtimes', 'wb') as fo:
+    with open(f'{loc}/MMM_runtimes', 'wb') as fo:
         pickle.dump(greedy_runtimes, fo)
-    print(f'mean initial {np.mean(initial_scores)}, greedy {np.mean(greedy_scores)}')
+    print(f'mean initial {np.mean(initial_scores)}, MMM {np.mean(greedy_scores)}')
