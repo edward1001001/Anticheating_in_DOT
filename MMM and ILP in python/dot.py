@@ -54,7 +54,6 @@ def main():
 #    report.report(loc=config.loc, algs=['random', 'MMM', 'CGS', 'MMMCGS', 'ilp'])
     # report without ilpS
     report.report(loc=config.loc, algs=['random', 'MMM', 'CGS', 'MMMCGS'])
-#    report.report2(loc=config.loc)
 
 
 if  __name__ == '__main__':
