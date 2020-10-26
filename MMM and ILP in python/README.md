@@ -30,11 +30,11 @@ Generated instances (both ``.instance`` and ``.mat`` files) will be saved under 
 ```
 # opt_ilp.run_ilp(instances, loc=config.loc) # ILP
 ```
-* (2) Choose the results to be report by modifying line 54
+* (2) Choose the results to be report by modifying line 54,
 ```
 report.report(loc=config.loc, algs=['random', 'MMM', 'CGS', 'MMMCGS', 'ilp'])
 ```
-. We can delete the name of the algorithm from the ``algs`` list to mute the report of its result; e.g.,
+We can delete the name of the algorithm from the ``algs`` list to mute the report of its result; e.g., replace it with the following line
 ```
 report.report(loc=config.loc, algs=['random', 'MMM', 'CGS', 'MMMCGS'])
 ```
