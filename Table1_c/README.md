@@ -1,1 +1,1 @@
-Table 1(c) for
+# Table 1(c) in the [science of learning]() paper
