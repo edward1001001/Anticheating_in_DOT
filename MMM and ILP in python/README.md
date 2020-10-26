@@ -53,3 +53,4 @@ The output box plot will be saved under the folder sepecified in the ``config.py
 ![](report_10_5_3.png)
 ![](report_10_5_5.png)
 ![](report_100_30_10.png)
+![](report_100_30_20.png)
