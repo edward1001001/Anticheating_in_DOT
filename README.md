@@ -41,4 +41,5 @@ We are also working on the DOT Platform which integrates the proposed techniques
 
 ## Contact
 lim23 at rpi dot edu
+
 Any discussions, suggestions and questions are welcome!
